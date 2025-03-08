@@ -19,8 +19,8 @@ jobs:
       # Bước 2: Cấu hình Git
       - name: Configure Git
         run: |
-          git config --global user.name "Khac Vu"
-          git config --global user.email "khacvukt@gmail.com"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
 
       # Bước 3: Merge nhánh vunk vào develop
       - name: Merge vunk into develop
