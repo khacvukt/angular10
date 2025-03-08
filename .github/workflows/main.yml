@@ -1,35 +1,24 @@
-name: Auto Merge from vunk to develop
+
+name: Auto Create Pull Request from vunk to develop
 
 on:
   push:
     branches:
-      - vunk
+      - vunk  # Khi push lên nhánh vunk
 
 jobs:
-  merge:
+  auto-merge:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Git
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-
-    - name: Fetch all branches
-      run: git fetch --all
-
-    - name: Checkout develop branch
-      run: git checkout develop
-
-    - name: Merge vunk into develop
-      run: |
-        git pull origin vunk
-      
-    - name: Push changes
-      run: |
-        git push origin develop
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create Pull Request from vunk to develop
+      uses: peter-evans/create-pull-request@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "Tạo Pull Request từ vunk vào develop"
+        body: "Pull request này được tạo tự động khi có push lên nhánh vunk."
+        head: vunk  # Nhánh vunk (nhánh bạn đang push lên)
+        base: develop  # Nhánh develop (nơi bạn muốn merge vào)
