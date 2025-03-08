@@ -1,1 +1,2 @@
-console.log("V1");
+console.log("V");
+// thêm 1 dòng
