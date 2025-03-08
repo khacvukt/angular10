@@ -6,7 +6,7 @@ on:
       - vunk  # Khi push lên nhánh vunk
 
 jobs:
-  merge-auto:
+  auto-merge:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +16,7 @@ jobs:
     - name: Create Pull Request from vunk to develop
       uses: peter-evans/create-pull-request@v4
       with:
-        token: ${{ secrets.KEY1213 }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         title: "Tạo Pull Request từ vunk vào develop"
         body: "Pull request này được tạo tự động khi có push lên nhánh vunk."
         head: vunk  # Nhánh vunk (nhánh bạn đang push lên)
