@@ -8,7 +8,9 @@ on:
 jobs:
   create-pull-request:
     runs-on: ubuntu-latest
-
+    permissions:
+          contents: write  # Cho phép quyền ghi nội dung repository
+          pull-requests: write  # Cho phép quyền tạo và quản lý pull requests
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
