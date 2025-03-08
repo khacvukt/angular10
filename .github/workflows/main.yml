@@ -26,7 +26,7 @@ jobs:
 
     - name: Merge vunk into develop
       run: |
-        git merge vunk --no-ff -m "Automated merge from vunk to develop"
+        git pull origin vunk
       
     - name: Push changes
       run: |
