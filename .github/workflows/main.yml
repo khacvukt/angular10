@@ -25,4 +25,4 @@ jobs:
           title: "Auto-generated Pull Request"
           body: "This PR was automatically created by GitHub Actions."
           base: develop  # Target branch
-          head: ${{ github.ref_name }}  # Source branch, the one that triggered the push
+          branch: ${{ github.ref_name }}  # Source branch, the one that triggered the push
