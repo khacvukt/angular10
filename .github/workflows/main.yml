@@ -28,4 +28,4 @@ jobs:
           git fetch origin develop
           git checkout develop
           git merge origin/vunk --no-ff --no-edit
-          git push origin develop
+          git push https://${{ secrets.KEY1213 }}@github.com/khacvukt/angular10.git develop
